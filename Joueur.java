@@ -1,7 +1,8 @@
+package cartes;
 public class Joueur {
     private String nom;
     private int vie;
-    private int popularite;
+    public int popularite;
 
 
     public Joueur(String nom, int vie, int popularite) {
