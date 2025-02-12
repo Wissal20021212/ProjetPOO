@@ -9,9 +9,8 @@ public abstract class  Cartes {
         this.nom = nom;
         this.description = description;
         this.numCarte=numCarte; }
-    public abstract void effet();
 
 
 
-
+    public abstract int effet(Joueur joueur);
 }
