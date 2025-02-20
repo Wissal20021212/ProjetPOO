@@ -2,15 +2,11 @@ package cartes;
 
 public abstract class  Cartes {
     private  nomCarte nom ;
-    private String description ;
     private int numCarte ;
 
-    protected Cartes (nomCarte nom , String description , int numCarte ) {
+    protected Cartes (nomCarte nom , int numCarte ) {
         this.nom = nom;
-        this.description = description;
         this.numCarte=numCarte; }
 
-
-
-    public abstract int effet(Joueur joueur);
+    abstract void appliquerEffet(Joueur joueur, Joueur adversaire);
 }

@@ -1,17 +1,16 @@
 package cartes;
 
 public class CartePopularite extends Cartes {
- private int ptPopulatrite ;
+ private int ptPopularite ;
 
-    public CartePopularite (nomCarte nom , String description , int numCarte , int ptPopulatrité ){
-        super(nom,description,numCarte);
-        this.ptPopulatrite = ptPopulatrité;
+    public CartePopularite (nomCarte nom , int numCarte , int ptPopularite ){
+        super(nom,numCarte);
+        this.ptPopularite = ptPopularite;
 
     }
     @Override
-    public int effet(Joueur joueur) {
-        joueur.popularite += ptPopulatrite;
-        return (joueur.popularite);
+    public void appliquerEffet(Joueur joueur, Joueur adversaire) {
+        joueur.ajouterPopularite(ptPopularite);
     }
 
 

@@ -4,14 +4,13 @@ public class CarteAttaque extends Cartes {
 
     private int ptVie ;
 
-    public CarteAttaque (nomCarte nom , String description , int numCarte , int ptPopulatrité ){
-        super(nom,description,numCarte);
+    public CarteAttaque (nomCarte nom  , int numCarte , int ptPopulatrité ){
+        super(nom,numCarte);
         this.ptVie = ptVie;
 
     }
     @Override
-    public int effet(Joueur joueur) {
-        joueur.vie -= ptVie;
-        return (joueur.vie);
+    public void appliquerEffet(Joueur joueur, Joueur adversaire) {
+        adversaire.retirerVie(ptVie);
     }
 }

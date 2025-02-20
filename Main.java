@@ -1,7 +1,12 @@
+import cartes.Jeu;
+import cartes.Joueur;
+
 public class Main {
     public static void main(String[] args)
 
     {
-        System.out.println("Hello world!");
+
+        Jeu jeu = new Jeu ("Antoine " , "Simon");
+        jeu.jouer();
     }
 }
