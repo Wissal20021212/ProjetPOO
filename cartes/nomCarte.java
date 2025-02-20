@@ -1,14 +1,18 @@
 package cartes;
 
 public enum nomCarte {
-    RévolteOrganisée,
-    MaindeFer,
-    AbordageRéussi,
-    DiscoursInspirant,
+    Révolte_Organisée,
+    Main_de_Fer,
+    Abordage_Réussi,
+    Discours_Inspirant,
 
-    CoupdeSabre,
+    Coupde_Sabre,
 
-    Sabotage;
-
+    Sabotage,
+    Discours_Héroïque,
+   Sauvetage_en_Mer,
+    Tresor_Partage,
+    Chanson_de_Pirate,
+    Amitié_Forgée;
 
     }

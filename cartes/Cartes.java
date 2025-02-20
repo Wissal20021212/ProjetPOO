@@ -9,4 +9,8 @@ public abstract class  Cartes {
         this.numCarte=numCarte; }
 
     abstract void appliquerEffet(Joueur joueur, Joueur adversaire);
+
+    public nomCarte getNom() {
+        return nom ;
+    }
 }
