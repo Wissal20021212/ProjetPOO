@@ -12,5 +12,6 @@ public class CarteAttaque extends Cartes {
     @Override
     public void appliquerEffet(Joueur joueur, Joueur adversaire) {
         adversaire.retirerVie(ptVie);
+        System.out.println("l'adversaire " + adversaire.getNom() + " a perdu " + ptVie + " points de vie .");
     }
 }

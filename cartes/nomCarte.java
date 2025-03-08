@@ -1,18 +1,8 @@
 package cartes;
 
 public enum nomCarte {
-    Révolte_Organisée,
-    Main_de_Fer,
-    Abordage_Réussi,
-    Discours_Inspirant,
-
-    Coupde_Sabre,
-
-    Sabotage,
-    Discours_Héroïque,
-   Sauvetage_en_Mer,
-    Tresor_Partage,
-    Chanson_de_Pirate,
-    Amitié_Forgée;
+    DISCOURS_INSPIRANT, REVOLTE_ORGANISEE, MAIN_DE_FER,
+    COUP_DE_SABRE, ABORDAGE_REUSSI, STRATEGIE_AUDACIEUSE,
+    RENFORTS_PIRATES, CANON_EN_FLAMMES, TRAHISON, MYSTIQUE_VOODOO
 
     }

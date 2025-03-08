@@ -11,6 +11,7 @@ public class CartePopularite extends Cartes {
     @Override
     public void appliquerEffet(Joueur joueur, Joueur adversaire) {
         joueur.ajouterPopularite(ptPopularite);
+        System.out.println("Le joueur " + joueur.getNom() + " a gagné " + ptPopularite +" points de popularite ! " );
     }
 
 

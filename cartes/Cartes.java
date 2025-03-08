@@ -13,4 +13,8 @@ public abstract class  Cartes {
     public nomCarte getNom() {
         return nom ;
     }
+    public int getNumCarte() {
+        return numCarte;
+    }
+
 }
