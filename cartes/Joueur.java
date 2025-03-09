@@ -59,6 +59,14 @@ public class Joueur {
             }
         }
     }
+    public boolean possedeCarte(Cartes carte) {
+        for (Cartes c : main) {
+            if (c != null && c.getNom() == carte.getNom()) {
+                return true; // Carte déjà présente
+            }
+        }
+        return false;
+    }
     // public void jouer(Joueur joueur) {
     //System.out.print("C'est au joueur " + joueur.getNom() + " avec " + joueur.getVie() + " coeurs et de popularité " + joueur.getPopularite() + " de jouer.");
     //}
@@ -90,7 +98,7 @@ public class Joueur {
         System.out.println(nom + " possède les cartes :");
         for (int i = 0; i < MAX_CARTES; i++) {
             if (main[i] != null) {
-                System.out.println((i+1) + ". " + main[i].getNom());
+                System.out.println((i+1) + ". " + main[i].getNom() + main[i].getDescription() );
             }
         }
     }
