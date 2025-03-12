@@ -42,7 +42,7 @@ public class Jeu {
 
         indexPioche = 0;
     }
-    private void melangerPioche() {
+    private void melangerPioche() { // fonction pour melanger les cartes a chaque match ( fonction appelé juste lors de creation de l'objet Jeu )
         Random rand = new Random();
         for (int i = pioche.length - 1; i > 0; i--) {
             int indexAleatoire = rand.nextInt(i + 1);
@@ -54,9 +54,9 @@ public class Jeu {
 
 
 
-    private Cartes piocherCarte() {
+   /* private Cartes piocherCarte() {
     return (indexPioche < pioche.length) ? pioche[indexPioche++] : null;
-}
+} */
 
 
 
@@ -90,10 +90,10 @@ public class Jeu {
 
        // return null;
     } */
-       private Cartes piocherCarte(Joueur joueur) {
+       private Cartes piocherCarte(Joueur joueur) { // sélectionne une carte aléatoire de la pioche et que le joueur ne l a pas déjà et la retire de la pioche
            Random rand = new Random();
            int tentative = 0;
-           while (tentative < pioche.length) {
+           while (tentative < pioche.length) { //cela évite une boucle infinie si toutes les cartes sont déjà prises ou nulle
                int index = rand.nextInt(pioche.length);
                if (pioche[index] != null && !joueur.possedeCarte(pioche[index])) {
                    Cartes cartePiochee = pioche[index];
@@ -108,7 +108,7 @@ public class Jeu {
                }
                tentative++;
            }
-           return null;
+           return null; // si aucune carte valide n est trouvée après plusieurs essais retourner null
        }
 
 
@@ -123,7 +123,7 @@ public class Jeu {
             joueurActuel.afficherEtat();
             adversaire.afficherEtat();
 
-            Cartes cartePiochee = piocherCarte(joueurActuel);
+            Cartes cartePiochee = piocherCarte(joueurActuel); //choisir aleatoirement une carte de la pioche
             if (cartePiochee != null) {
                 joueurActuel.piocherCarte(cartePiochee);
             }

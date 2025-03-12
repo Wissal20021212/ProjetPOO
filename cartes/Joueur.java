@@ -2,8 +2,7 @@ package cartes;
 
 import cartes.Cartes;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Joueur {
     private String nom;
@@ -12,13 +11,12 @@ public class Joueur {
 
     public int popularite;
     public Cartes[] main;
-    private static final int VIE_INITIALE = 5;
     private static final int MAX_CARTES = 5 ;
 
 
     public Joueur(String nom) {
         this.nom = nom;
-        this.vie = VIE_INITIALE ;
+        this.vie = 5 ;
         this.popularite = 0;
 
         this.main = new Cartes[MAX_CARTES];
@@ -38,20 +36,20 @@ public class Joueur {
         return nom;
     }
 
-    public void ajouterCarte(Cartes carte) {
+   /* public void ajouterCarte(Cartes carte) {
         for (int i = 1; i < main.length; i++) {
             if (main[i] == null) {
                 main[i] = carte;
                 break;
             }
         }
-    }
-    public void recevoirCartes(Cartes[] cartesInitiales) {
+    } */
+    public void recevoirCartes(Cartes[] cartesInitiales) { // les cartes que chaque joueur va les recevoir au debut
         for (int i = 0; i < cartesInitiales.length; i++) {
             main[i] = cartesInitiales[i];
         }
     }
-    public void piocherCarte(Cartes carte) {
+    public void piocherCarte(Cartes carte) {    // carte a ajouter apres etre piocher
         for (int i = 0; i < MAX_CARTES; i++) {
             if (main[i] == null) {
                 main[i] = carte;
@@ -59,10 +57,10 @@ public class Joueur {
             }
         }
     }
-    public boolean possedeCarte(Cartes carte) {
+    public boolean possedeCarte(Cartes carte) { // fonction pour verifier si la carte est deja dans la main de joueur
         for (Cartes c : main) {
             if (c != null && c.getNom() == carte.getNom()) {
-                return true; // Carte déjà présente
+                return true; // carte déjà présente
             }
         }
         return false;
