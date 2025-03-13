@@ -6,14 +6,14 @@ public class Jeu {
     private Joueur joueur1;
     private Joueur joueur2;
     private Cartes[] pioche;
-    private int indexPioche;
+
     private Random random;
 
 
     public Jeu(String nomJoueur1, String nomJoueur2) {
         joueur1 = new Joueur(nomJoueur1);
         joueur2 = new Joueur(nomJoueur2);
-        pioche = new Cartes[17];
+        pioche = new Cartes[19];
         random = new Random();
 
         initialiserCartes();
@@ -38,9 +38,9 @@ public class Jeu {
         pioche[14] = new CarteAttaque(nomCarte.TOURMENT_DES_ABYSSES, " : Carte d'Attaque : L'adversaire perd 3 points de vie", 15, 3);
         pioche[15] = new CarteAttaque(nomCarte.FEU_DES_CANONS, " : Carte d'Attaque : L'adversaire perd 2 points de vie", 16, 2);
         pioche[16] = new CartePopularite(nomCarte.LEGENDE_DES_OCÉANS, " : Carte de Popularité : Le joueur gagne 3 points de popularité", 17, 3);
+        pioche[17]= new CarteSpeciale(nomCarte.EFFET_INVERSE_VIE," : Carte Special : Le Joueur actuel perd 1 point de vie ( Carte Joué directement une fois picohé)" , 18 ,0,1);
+        pioche[18]= new CarteSpeciale(nomCarte.EFFET_INVERSE_POPULARITE," : Carte Special : L'adversaire gagne 1 point de popularite ( Carte Joué directement une fois picohé) " , 18 ,0,1);
 
-
-        indexPioche = 0;
     }
     private void melangerPioche() { // fonction pour melanger les cartes a chaque match ( fonction appelé juste lors de creation de l'objet Jeu )
         Random rand = new Random();
@@ -62,7 +62,7 @@ public class Jeu {
 
     private void distribuerCartes() {
         Cartes[] cartesJoueur1 = {pioche[0], pioche[1], pioche[2], pioche[3], pioche[4]};
-        Cartes[] cartesJoueur2 = {pioche[1], pioche[2], pioche[3], pioche[4], pioche[5]};
+        Cartes[] cartesJoueur2 = {pioche[5], pioche[6], pioche[7], pioche[8], pioche[9]};
 
         joueur1.recevoirCartes(cartesJoueur1);
         joueur2.recevoirCartes(cartesJoueur2);}
@@ -125,15 +125,19 @@ public class Jeu {
 
             Cartes cartePiochee = piocherCarte(joueurActuel); //choisir aleatoirement une carte de la pioche
             if (cartePiochee != null) {
-                joueurActuel.piocherCarte(cartePiochee);
+                joueurActuel.ajouterCarte(cartePiochee);
             }
+
 
             joueurActuel.afficherMain();
 
-            System.out.println("Choisissez une carte à jouer (1 à 5):");
+           /* if(cartePiochee.getNumCarte()==18 || cartePiochee.getNumCarte()==19)
+                joueurActuel.jouerCarte();
+           */
+            System.out.println("Choisi une carte à jouer (1 à 5):");
             int choix = scanner.nextInt();
             while (choix < 1 || choix > 5) {
-                System.out.println("Re-entrer le numéro de carte à jouer (1 à 5):");
+                System.out.println("Re entrer le numéro de carte à jouer (1 à 5):");
                 choix = scanner.nextInt();
             }
 
@@ -141,7 +145,7 @@ public class Jeu {
             joueurActuel.jouerCarte(choix, adversaire);
 
             if (joueurActuel.aGagne()) {
-                System.out.println(joueurActuel.getNom() + " a gagné en atteignant 5 points de popularité !");
+                System.out.println(joueurActuel.getNom() + " a gagné en arrivent 5 points de popularité !");
                 break;
             }
 
@@ -155,5 +159,4 @@ public class Jeu {
             adversaire = temp;
         }
 
-        scanner.close();
     }}

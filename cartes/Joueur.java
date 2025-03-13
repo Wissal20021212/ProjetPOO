@@ -49,7 +49,7 @@ public class Joueur {
             main[i] = cartesInitiales[i];
         }
     }
-    public void piocherCarte(Cartes carte) {    // carte a ajouter apres etre piocher
+    public void ajouterCarte(Cartes carte) {    // carte a ajouter apres etre piocher
         for (int i = 0; i < MAX_CARTES; i++) {
             if (main[i] == null) {
                 main[i] = carte;
@@ -93,7 +93,7 @@ public class Joueur {
 
 
     public void afficherMain() {
-        System.out.println(nom + " possède les cartes :");
+        System.out.println(nom + " a les cartes :");
         for (int i = 0; i < MAX_CARTES; i++) {
             if (main[i] != null) {
                 System.out.println((i+1) + ". " + main[i].getNom() + main[i].getDescription() );
@@ -110,7 +110,7 @@ public class Joueur {
     public void jouerCarte(int index, Joueur adversaire) {
         if (index >= 1 && index < (main.length+1) && main[index-1] != null) {
             Cartes carte = main[index-1];
-            main[index-1] = null;
+            main[index-1] = null; // supprimer la carte de main
             carte.appliquerEffet(this, adversaire);
         }
     }
