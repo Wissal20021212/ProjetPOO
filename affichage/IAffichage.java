@@ -8,5 +8,5 @@ public interface IAffichage {
     void afficherGagnant(String nom);
     int choisirCarte( int nbMaxCarte);
 
-    void afficherCartes(String nom);
+    void afficherMain(String nom);
 }

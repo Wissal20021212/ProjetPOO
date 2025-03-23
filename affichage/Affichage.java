@@ -7,38 +7,38 @@ public class Affichage implements IAffichage {
 
     @Override
     public void afficherCarte(String nom, String description, int numCarte) {
-        System.out.println( numCarte  + "\t -  " + nom + " : " + description + ". \n");
+        System.out.println( numCarte  + "-  " + nom + " : " + description );
     }
 
     @Override
-    public void afficherCartes(String nom) {
-        System.out.println("les cartes dans la main de  " + nom + " : \n");
+    public void afficherMain(String nom) {
+        System.out.println("les cartes dans la main de  " + nom );
     }
 
     @Override
     public void afficherEtat(String nom, int vie, int popularite) {
-        System.out.println("nom : " + nom + " | \t vie : " + vie + " | \t popularite : " + popularite + " \n");
+        System.out.println("nom : " + nom + " | vie : " + vie + " | popularite : " + popularite );
     }
 
 
 
     @Override
     public void afficherTour(String nom) {
-        System.out.println("C'est au tour de " + nom + " de jouer. \n");
+        System.out.println("C'est au tour de " + nom + " de jouer");
     }
 
     @Override
     public void afficherGagnant(String nom) {
-        System.out.println(nom + " a gagné en elimenant son adversaire  \n");
+        System.out.println(nom + " a gagné en elimenant son adversaire ");
     }
 
     @Override
-    public int choisirCarte( int nbMaxCarte) {
+    public int choisirCarte( int maxCarte) {
         int choix;
         do {
             System.out.println("Choisir une carte a jouer ( 1-5) : ");
             choix = scanner.nextInt();
-        } while (choix < 1 || choix > nbMaxCarte);
+        } while (choix < 1 || choix > maxCarte);
         return choix;
     }
 

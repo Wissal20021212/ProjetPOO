@@ -75,7 +75,7 @@ public class Joueur {
     }
 
     public void afficherMain() {
-        affichage.afficherCartes(this.nom);
+        affichage.afficherMain(this.nom);
         for (int i = 0; i < MAX_CARTES; i++) {
             if (main[i] != null) {
                 affichage.afficherCarte(main[i].getNom(), main[i].getDescription(), i + 1);
